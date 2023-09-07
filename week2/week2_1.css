@@ -77,3 +77,7 @@ footer {
     padding: 20px;
     font-size: 12px;
 }
+#s1 ul {
+    list-style-type: none;
+    padding-left: 0;
+}
