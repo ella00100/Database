@@ -1,5 +1,5 @@
-const rangeInput = document.getElementById("js-range");
-const guessForm = document.getElementById("js-guess");
+const range = document.getElementById("js-range");
+const guess = document.getElementById("js-guess");
 const result = document.getElementById("js-result");
 
 function generateRandomNumber(min, max) {
@@ -9,9 +9,9 @@ function generateRandomNumber(min, max) {
 const handlePrint = (e) => {
     e.preventDefault();
 
-    const rangeMaxNum = parseInt(rangeInput.value);
+    const rangeMaxNum = parseInt(range.value);
     const randomNumber = generateRandomNumber(0, rangeMaxNum);
-    const guessNum = parseInt(guessForm.querySelector("input").value); 
+    const guessNum = parseInt(guess.querySelector("input").value); 
     
     const rangeSpan = document.querySelector("#js-title span");
     rangeSpan.innerHTML = `${rangeMaxNum}`
@@ -26,4 +26,4 @@ const handlePrint = (e) => {
 
 };
 
-guessForm.addEventListener("submit", handlePrint);
+guess.addEventListener("submit", handlePrint);
