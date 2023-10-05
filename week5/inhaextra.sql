@@ -25,23 +25,23 @@ CREATE TABLE Department (
 -- Table 'inha'.'room'
 -- -----------------------------------------------------
 CREATE TABLE Room (
-  Rid INT(8) NOT NULL,
-  Bname VARCHAR(20) NOT NULL,
-  Mgr_Dname VARCHAR(40) NULL,
-  RName VARCHAR(20) NOT NULL,
-  Capacity INT NULL,
-  PRIMARY KEY (Rid, Bname),
-  UNIQUE INDEX Room_Name_UNIQUE (RName ASC) VISIBLE,
-  INDEX fk_building_name_idx (Bname ASC) VISIBLE,
-  INDEX fk_dept_name_room_idx (Mgr_Dname ASC) VISIBLE,
-  CONSTRAINT fk_building_name
-    FOREIGN KEY (Bname)
-    REFERENCES Building (Bname)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT fk_dept_name_room
-    FOREIGN KEY (Mgr_Dname)
-    REFERENCES Department (Dname)
+    Rid INT(8) NOT NULL,
+    Bname VARCHAR(20) NOT NULL,
+    Mgr_Dname VARCHAR(40) NULL,
+    RName VARCHAR(20) NOT NULL,
+    Capacity INT NULL,
+    PRIMARY KEY (Rid, Bname),
+    UNIQUE INDEX Room_Name_UNIQUE (RName ASC) VISIBLE,
+    INDEX fk_building_name_idx (Bname ASC) VISIBLE,
+    INDEX fk_dept_name_room_idx (Mgr_Dname ASC) VISIBLE,
+    CONSTRAINT fk_building_name
+        FOREIGN KEY (Bname)
+        REFERENCES Building (Bname)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    CONSTRAINT fk_dept_name_room
+        FOREIGN KEY (Mgr_Dname)
+        REFERENCES Department (Dname)
 );
 
 -- -----------------------------------------------------
