@@ -10,8 +10,8 @@
     </tr>
     {{#each Building}}
     <tr>
-        <td>{{Id}}</td>
-        <td>{{Name}}</td>
+        <td>{{Bid}}</td>
+        <td>{{Bname}}</td>
     </tr>
     {{/each}}
 </table>
@@ -28,10 +28,10 @@
     </tr>
     {{#each Department}}
     <tr>
-        <td>{{Id}}</td>
-        <td>{{Name}}</td>
-        <td>{{Email}}</td>
-        <td>{{PhoneNumber}}</td>
+        <td>{{Did}}</td>
+        <td>{{Dname}}</td>
+        <td>{{Demail}}</td>
+        <td>{{DphoneNumber}}</td>
     </tr>
     {{/each}}
 </table>
@@ -44,16 +44,16 @@
         <td>Id</td>
         <td>Name</td>
         <td>Capacity</td>
-        <td>Building Id</td>
-        <td>Department Id</td>
+        <td>Building Name</td>
+        <td>Department Name</td>
     </tr>
     {{#each Room}}
     <tr>
-        <td>{{id}}</td>
-        <td>{{Name}}</td>
+        <td>{{Rid}}</td>
+        <td>{{Rname}}</td>
         <td>{{Capacity}}</td>
-        <td>{{building_Id}}</td>
-        <td>{{Department_Id}}</td>
+        <td>{{Bname}}</td>
+        <td>{{Mgr_Dname}}</td>
     </tr>
     {{/each}}
 </table>
@@ -65,17 +65,21 @@
     <tr>
         <td>Id</td>
         <td>Name</td>
+        <td>Major</td>
+        <td>Club</td>
         <td>Email</td>
         <td>Phone number</td>
-        <td>Major</td>
+        
     </tr>
     {{#each Student}}
     <tr>
-        <td>{{Id}}</td>
-        <td>{{Name}}</td>
-        <td>{{Email}}</td>
-        <td>{{PhoneNumber}}</td>
+        <td>{{Sid}}</td>
         <td>{{Major}}</td>
+        <td>{{ClubName}}</td>
+        <td>{{SName}}</td>
+        <td>{{Semail}}</td>
+        <td>{{SphoneNumber}}</td>
+        
     </tr>
     {{/each}}
 </table>

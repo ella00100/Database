@@ -15,10 +15,11 @@ router.post('/student', async (req, res) => {
     const vars = req.body;
     const data = {
         Id: vars.id,
+        Major: vars.major,
+        Club: vars.club,
         Name: vars.name,
         Email: vars.email,
-        PhoneNumber: vars.phonenumber,
-        Major: vars.major,
+        PhoneNumber: vars.phoneNumber,
     }
     await updateSql.updateStudent(data);
 

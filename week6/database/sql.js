@@ -40,8 +40,9 @@ export const selectSql = {
 export const insertSql = {
     setStudent: async (data) => {
         const sql = `insert into student values (
-            "${data.Id}", "${data.Name}", "${data.Email}", 
-            "${data.PhoneNumber}", "${data.Major}"
+            "${data.Id}",  "${data.Major}",  "${data.Club}",
+            "${data.Name}", "${data.Email}", 
+            "${data.PhoneNumber}",
         )`
         console.log(data);
         await promisePool.query(sql);
@@ -54,10 +55,11 @@ export const updateSql = {
         console.log(data);
         const sql = `
             UPDATE Student 
-            SET Id = ${data.Id}, Name = "${data.Name}", 
-                Email = "${data.Email}", PhoneNumber = "${data.PhoneNumber}",
-                Major = "${data.Major}"
-            WHERE Id = ${data.Id}`;
+            SET Sid = ${data.Id}, Major = "${data.Major}",ClubName = "${data.Club}",
+            SName = "${data.Name}", SEmail = "${data.Email}", 
+            SPhoneNumber = "${data.PhoneNumber}",
+                
+            WHERE Sid = ${data.Id}`;
         console.log(sql);
         await promisePool.query(sql);
     },

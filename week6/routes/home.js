@@ -12,10 +12,12 @@ router.post('/', (req, res) => {
 
     const data = {
         Id: vars.id,
+        Major: vars.major,
+        Club: vars.club,
         Name: vars.name,
         Email: vars.email,
         PhoneNumber: vars.phoneNumber,
-        Major: vars.major,
+        
     };
     insertSql.setStudent(data);
 })
