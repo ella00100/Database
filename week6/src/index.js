@@ -6,7 +6,7 @@ import homeRouter from '../routes/home';
 import updateRouter from '../routes/update';
 import selectRouter from '../routes/select';
 
-const PORT = 3000;
+const PORT = 8000;
 
 const app = express(); 
 
