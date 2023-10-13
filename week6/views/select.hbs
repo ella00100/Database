@@ -42,17 +42,17 @@
 <table>
     <tr>
         <td>Id</td>
-        <td>Name</td>
-        <td>Capacity</td>
         <td>Building Name</td>
+        <td>Capacity</td>
+        <td>Room Name</td>
         <td>Department Name</td>
     </tr>
     {{#each Room}}
     <tr>
         <td>{{Rid}}</td>
-        <td>{{Rname}}</td>
-        <td>{{Capacity}}</td>
         <td>{{Bname}}</td>
+        <td>{{Capacity}}</td>
+        <td>{{RName}}</td>
         <td>{{Mgr_Dname}}</td>
     </tr>
     {{/each}}
@@ -80,6 +80,29 @@
         <td>{{Semail}}</td>
         <td>{{SphoneNumber}}</td>
         
+    </tr>
+    {{/each}}
+</table>
+
+<!--Class-->
+<h2>{{title5}}</h2>
+
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Professor Id</td>
+        <td>Number of Participants</td>
+        <td>Room name</td>
+        
+    </tr>
+    {{#each Class}}
+    <tr>
+        <td>{{ClassId}}</td>
+        <td>{{ClassName}}</td>
+        <td>{{ProfessorId}}</td>
+        <td>{{NumberOfParticipants}}</td>
+        <td>{{Rname}}</td>      
     </tr>
     {{/each}}
 </table>

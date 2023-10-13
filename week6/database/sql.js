@@ -34,6 +34,11 @@ export const selectSql = {
         const [result] = await promisePool.query(sql);
         return result;
     },
+    getClass: async () => {
+        const sql = `select * from class`;
+        const [result] = await promisePool.query(sql);
+        return result;
+    },
 }
 
 // insert query
@@ -42,7 +47,7 @@ export const insertSql = {
         const sql = `insert into student values (
             "${data.Id}",  "${data.Major}",  "${data.Club}",
             "${data.Name}", "${data.Email}", 
-            "${data.PhoneNumber}",
+            "${data.PhoneNumber}"
         )`
         console.log(data);
         await promisePool.query(sql);
