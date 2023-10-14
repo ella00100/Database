@@ -3,21 +3,25 @@
     <tr>
         <td>Id</td>
         <td>Name</td>
-        <td>Email</td>
-        <td>Phone_number</td>
         <td>Major</td>
+        <td>Club Name</td>
+        <td>Email</td>
+        <td>Phone number</td>
+
     </tr>
     {{#each student_res}}
     <form method="post">
         <tr>
-            <td>{{Id}}</td>
-            <td style="display: none"><input type="text" name="id" value={{Id}}></td> 
-            <td><input type="text" name="name" value="{{Name}}"></td> 
-            <td><input type="text" name="email" value={{Email}}></td> 
-            <td><input type="text" name="phonenumber" value={{PhoneNumber}}></td> 
-            <td><input type="text" name="major" value="{{Major}}"></td>
+            <td>{{Sid}}</td> 
+            <td style="display: none"><input type="text" name="id" value={{Sid}}></td> 
+            <td><input type="text" name="name" value={{Sname}}></td> 
+            <td><input type="text" name="major" value={{Major}}></td> 
+            <td><input type="text" name="club" value={{ClubName}}></td> 
+            <td><input type="text" name="email" value={{Semail}}></td>
+            <td><input type="text" name="phoneNumber" value={{SphoneNumber}}></td>
             <td><input type="submit" value="Modify" formaction="/update/student"></td>
         </tr>
     </form>
     {{/each}}
 </table>
+

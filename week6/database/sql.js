@@ -60,11 +60,25 @@ export const updateSql = {
         console.log(data);
         const sql = `
             UPDATE Student 
-            SET Sid = ${data.Id}, Major = "${data.Major}",ClubName = "${data.Club}",
-            SName = "${data.Name}", SEmail = "${data.Email}", 
-            SPhoneNumber = "${data.PhoneNumber}",
+            SET Sid = '${data.Id}', Major = '${data.Major}', ClubName = '${data.Club}',
+            SName = '${data.Name}', SEmail = '${data.Email}', 
+            SPhoneNumber = '${data.PhoneNumber}'
                 
-            WHERE Sid = ${data.Id}`;
+            WHERE Sid = '${data.Id}'
+            `;
+        console.log(sql);
+        await promisePool.query(sql);
+    },
+    updateDepartment: async (data) => {
+        console.log(data);
+        const sql = `
+            UPDATE Department
+            SET Did = '${data.Id}', Dname = '${data.Name}', 
+            Demail = '${data.Email}',
+            DPhoneNumber = '${data.PhoneNumber}'
+                
+            WHERE Did = '${data.Id}'
+            `;
         console.log(sql);
         await promisePool.query(sql);
     },

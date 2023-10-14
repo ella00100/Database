@@ -11,8 +11,10 @@ router.get('/student', async (_req, res) => {
         student_res,
     });
 });
+
 router.post('/student', async (req, res) => {
     const vars = req.body;
+
     const data = {
         Id: vars.id,
         Major: vars.major,
@@ -20,10 +22,34 @@ router.post('/student', async (req, res) => {
         Name: vars.name,
         Email: vars.email,
         PhoneNumber: vars.phoneNumber,
-    }
+        
+    };
     await updateSql.updateStudent(data);
 
-    res.redirect('/update');
+    res.redirect('/update/student');
+})
+
+router.get('/department', async (_req, res) => {
+    const department_res = await selectSql.getDepartment();
+    console.log(department_res)
+    res.render('updateDepartment', {
+        main_title: "UPDATE 'Department' table",
+        department_res,
+    });
+});
+
+router.post('/department', async (req, res) => {
+    const vars = req.body;
+
+    const data = {
+        Id: vars.id,
+        Name: vars.name,
+        Email: vars.email,
+        PhoneNumber: vars.phoneNumber,
+    };
+    await updateSql.updateDepartment(data);
+
+    res.redirect('/update/department');
 })
 
 module.exports = router;
