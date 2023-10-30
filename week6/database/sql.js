@@ -83,3 +83,13 @@ export const updateSql = {
         await promisePool.query(sql);
     },
 };
+
+//delete Query
+export const deleteSql = {
+    deleteCalss: async (data) => {
+        console.log('delete ClassId = ', data);
+        const sql = `delete from Class where ClassId=${data.ClassId}`;
+        console.log(sql);
+        await promisePool.query(sql);
+    }
+}
