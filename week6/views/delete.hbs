@@ -1,0 +1,31 @@
+<h1>{{ title }}</h1>
+
+<table>
+  <tr>
+    <td>Class Id</td>
+    <td>Professor Id</td>
+    <td>Class Name</td>
+    <td>Room Name</td>
+  </tr>
+  {{#each Class}}
+    <form method="post">
+      <tr>
+        <td>{{ClassId}}</td>
+        <td>{{ProfessorId}}</td>
+        <td>{{ClassName}}</td>
+        <td>{{Rname}}</td>
+        <td style="border: none; margin-left: 10px;">
+          <button 
+            style="margin-left: 10px;" 
+            name='delBtn' 
+            type="submit" 
+            value="{{ClassId}}" 
+            formaction="/class/delete"
+          >
+          delete
+          </button>
+        </td>
+      </tr>    
+    </form>
+  {{/each}}
+</table>

@@ -1,7 +1,7 @@
 <h1>{{main_title}}</h1>
 
 <!--Building-->
-<h2>{{title1}}</h2>
+{{!-- <h2>{{title1}}</h2>
 
 <table>
     <tr>
@@ -14,10 +14,10 @@
         <td>{{Bname}}</td>
     </tr>
     {{/each}}
-</table>
+</table> --}}
 
 <!--Department-->
-<h2>{{title2}}</h2>
+{{!-- <h2>{{title2}}</h2>
 
 <table>
     <tr>
@@ -34,10 +34,10 @@
         <td>{{DphoneNumber}}</td>
     </tr>
     {{/each}}
-</table>
+</table> --}}
 
 <!--Room-->
-<h2>{{title3}}</h2>
+{{!-- <h2>{{title3}}</h2>
 
 <table>
     <tr>
@@ -56,7 +56,7 @@
         <td>{{Mgr_Dname}}</td>
     </tr>
     {{/each}}
-</table>
+</table> --}}
 
 <!--Student-->
 <h2>{{title4}}</h2>
@@ -84,7 +84,19 @@
     {{/each}}
 </table>
 
-<!--Class-->
+
+<form method="get">
+          <button 
+            style="margin-left: 10px;" 
+            type="submit" 
+            formaction="/class/delete"
+          >
+          수강취소하기
+          </button>
+
+
+
+{{!-- <!--Class-->
 <h2>{{title5}}</h2>
 
 <table>
@@ -105,4 +117,4 @@
         <td>{{Rname}}</td>      
     </tr>
     {{/each}}
-</table>
+</table> --}}

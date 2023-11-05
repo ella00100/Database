@@ -112,6 +112,26 @@ CREATE TABLE Class (
         REFERENCES Room (RName)
 );
 
+
+-- -----------------------------------------------------
+-- Table 'inha'.'class'
+-- -----------------------------------------------------
+
+CREATE TABLE Enroll (
+    Sid INT(8) NOT NULL,
+    ClassId INT(8) NOT NULL,
+    PRIMARY KEY (Sid, ClassId),
+    INDEX fk_Student_id_idx (Sid ASC) VISIBLE,
+    INDEX fk_class_id_idx (ClassId ASC) VISIBLE,
+    CONSTRAINT fk_Student_id
+        FOREIGN KEY (Sid)
+        REFERENCES Student (Sid),
+    CONSTRAINT fk_class_id
+        FOREIGN KEY (ClassId)
+        REFERENCES Class (ClassId)
+
+);
+
 INSERT INTO Building VALUES(12345678, "Building 1");
 INSERT INTO Building VALUES(11111111, "Building 2");
 INSERT INTO Building VALUES(12323434, "Building 3");
@@ -157,3 +177,8 @@ INSERT INTO Class VALUES(00199993, 22220221,  "Data Structure", 50,  "Room 103")
 INSERT INTO Class VALUES(00199994, 22220223, "business english", 30,  "Room 303");
 INSERT INTO Class VALUES(00199995, 22220224, "marketing", 100,  "Room 208");
 
+INSERT INTO Enroll VALUES(12192261, 00199991);
+INSERT INTO Enroll VALUES(12192261, 00199992);
+INSERT INTO Enroll VALUES(12192261, 00199993);
+INSERT INTO Enroll VALUES(12192261, 00199994);
+INSERT INTO Enroll VALUES(12192261, 00199995);

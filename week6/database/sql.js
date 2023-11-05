@@ -92,4 +92,27 @@ export const deleteSql = {
         console.log(sql);
         await promisePool.query(sql);
     }
+};
+
+//login Query
+export const selectLoginSql = {
+    getUser: async () => {
+        const sql = `select * from student`;
+        const [result] = await promisePool.query(sql);
+        return result;
+    },
+    getClass: async (data) => {
+        const sql = `select * from class where ClassId in (select ClassId from enroll where Sid=${data.id})`;
+        const [result] = await promisePool.query(sql);
+        return result;
+    },
 }
+
+export const deleteLoginSql = {
+    deleteClass: async (data) => {
+        console.log('delete class Id =', data);
+        const sql = `delete from enroll where ClassId=${data.ClassId}`
+        console.log(sql);
+        await promisePool.query(sql);
+    },
+};

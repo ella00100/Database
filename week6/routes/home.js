@@ -3,7 +3,7 @@ import { insertSql } from '../database/sql';
 
 const router = express.Router();
 
-router.get('/insert', (req, res) => {
+router.get('/', (req, res) => {
     res.render('home', { data: " " });
 })
 

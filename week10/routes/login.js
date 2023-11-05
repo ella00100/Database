@@ -9,12 +9,15 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
     const vars = req.body;
+    console.log(req.session);
     const users = await selectSql.getUser();
 
     users.map((user) => {
         console.log('ID :', user.Id);
         if (vars.id === user.Id && vars.password === user.Password) {
             console.log('login success!');
+            console.log(req.session);
+
             req.session.user = { id: user.Id, role: user.Role, checkLogin: true };
         }
     });
