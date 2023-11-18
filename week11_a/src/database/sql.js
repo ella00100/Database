@@ -30,21 +30,30 @@ export const selectSql = {
     const uid = await promisePool.query(`select Id from Student where StudentId=${data.sId}`);
     console.log(uid[0][0].Id);
     const [rows] = await promisePool.query(`
-    select C.Cid, C.Name as Course, C.Professor, D.Dname as Opening_departments, C.Number_of_participant
+    select C.ID, C.Name as Course, C.Professor, D.Dname as Opening_departments, C.Number_of_participant
     from class C
     join department D on C.Did = D.Id
     left join class_student CS on C.ID = CS.Class_Id
     where CS.Student_Id = '${uid[0][0].Id}' and C.Did = D.Id`);
     return rows;
   },
+  // <td>{{ID}}</td>
+  //             <td>{{Course}}</td>
+  //             <td>{{Professor}}</td>
+  //             <td>{{Opening_departments}}</td>
+  //             <td>{{Number_of_participant}}</td>
+  //             <td id="empty">{{Remaining_participants}}</td>
   getAllCourse: async() => {
     const [rows] = await promisePool.query(`
-    select C.cid, C.name, C.professor, 
-    C.number_of_participant - COUNT(CS.Student_Id) AS Opening_Departments_Maximum_participants 
+    select C.ID, C.Name as Course, C.Professor, 
+    D.Dname as Opening_departments,
+    C.Number_of_participant,
+    Number_of_participant - COUNT(CS.Student_Id) as Remaining_participants
     from Class C 
+    join department D on C.Did = D.Id
     left join class_student CS 
-    on C.id= CS.class_id 
-    group by C.Id; `)
+    on C.ID= CS.Class_Id 
+    group by C.ID; `)
     return rows;
   }
 }
