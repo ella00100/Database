@@ -38,11 +38,11 @@ export const selectSql = {
     return rows;
   },
   // <td>{{ID}}</td>
-  //             <td>{{Course}}</td>
-  //             <td>{{Professor}}</td>
-  //             <td>{{Opening_departments}}</td>
-  //             <td>{{Number_of_participant}}</td>
-  //             <td id="empty">{{Remaining_participants}}</td>
+  // <td>{{Course}}</td>
+  // <td>{{Professor}}</td>
+  // <td>{{Opening_departments}}</td>
+  // <td>{{Number_of_participant}}</td>
+  // {{Remaining_participants}}</td>
   getAllCourse: async() => {
     const [rows] = await promisePool.query(`
     select C.ID, C.Name as Course, C.Professor, 

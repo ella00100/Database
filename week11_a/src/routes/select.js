@@ -37,6 +37,7 @@ router.post('/', async(req, res) => {
     const isEnrolled = enrolledCourses.some(course => course.ID == data.cId);
     
     const allCourses = await selectSql.getAllCourse();
+    //allCourse에서 Apply클릭된 수업 찾음
     const selectedCourse = allCourses.find(course => course.ID == data.cId);
     
     console.log(req.body);
